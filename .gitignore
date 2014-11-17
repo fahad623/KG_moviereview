@@ -1,0 +1,5 @@
+data/
+classifier/
+*.csv
+*.csv.gz
+*.suo
