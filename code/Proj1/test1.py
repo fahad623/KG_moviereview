@@ -47,3 +47,4 @@ text = ['Hop on the pop', 'Hop off the pop', 'Hop Hop the hop']
 vec = HashingVectorizer()
 x = vec.fit_transform(text)
 print x
+
