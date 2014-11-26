@@ -41,14 +41,15 @@ if __name__ == '__main__':
     # use softmax multi-class classification
     param['objective'] = 'multi:softmax'
     # scale weight of positive examples
-    param['eta'] = 0.1
-    param['max_depth'] = 10
+    param['eta'] = 0.2
+    param['max_depth'] = 1000
+    param['subsample'] = 0.7
     param['silent'] = 1
-    param['nthread'] = 4
+    param['nthread'] = 7
     param['num_class'] = 5
     
     watchlist = [ (xg_train,'train'), (xg_test, 'test') ]
-    num_round = 1000
+    num_round = 1500
     
     bst = xgb.train( param, xg_train, num_round)    
     ypred = bst.predict( xg_test )
@@ -59,3 +60,7 @@ if __name__ == '__main__':
         os.makedirs(clfFolder)
 
     df_output.to_csv(clfFolder + "output.csv", index = False)
+    
+
+#gs.best_params_ = 'max_depth': 100, num_round = 1000
+# Kaggle score - 0.61392
