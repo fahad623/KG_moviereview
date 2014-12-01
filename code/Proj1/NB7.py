@@ -7,11 +7,11 @@ from sklearn.naive_bayes import MultinomialNB
 
 trainFile = "../../data/train.tsv"
 testFile = "../../data/test.tsv"
-clfFolder = "../../classifier/NB1/"
+clfFolder = "../../classifier/NB7/"
 
 
 def make_train_test(df_train, df_test):
-    vectorizer = CountVectorizer()
+    vectorizer = CountVectorizer(ngram_range=(2, 2))
     
     X_train = vectorizer.fit_transform(df_train['Phrase'].values)
     Y_train = df_train['Sentiment'].values
@@ -33,7 +33,6 @@ if __name__ == '__main__':
     clf = MultinomialNB()
     clf.fit(X_train, Y_train)
     
-    
     df_output['Sentiment'] = clf.predict(X_test)
     
     if not os.path.exists(clfFolder):
@@ -44,4 +43,4 @@ if __name__ == '__main__':
     score_file.close()
     df_output.to_csv(clfFolder + "output.csv", index = False)
     
-# Kaggle score - 0.59882
+# Kaggle score - 0.55518
