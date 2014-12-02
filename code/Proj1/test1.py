@@ -43,8 +43,16 @@ d = df.T.to_dict().values()
 #print x.toarray()
 #print vec.get_feature_names()
 
-text = ['Hop on the pop', 'Hop off the pop', 'Hop Hop the hop']
-vec = HashingVectorizer()
-x = vec.fit_transform(text)
-print x
+#text = ['Hop on the pop', 'Hop off the pop', 'Hop Hop the hop']
+#vec = HashingVectorizer()
+#x = vec.fit_transform(text)
+#print x
 
+
+text = ['Hop on the pop', 'Hop off', 'Hop Hop hop']
+vectorizer = CountVectorizer(ngram_range=(1,8), stop_words='english')
+
+vectorizer.fit(text)
+x = vectorizer.transform(text)
+print x.toarray()
+print vectorizer.get_feature_names()
