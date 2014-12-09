@@ -26,6 +26,7 @@ if __name__ == '__main__':
 
     df_train = pd.read_csv(trainFile, sep='\t')
     df_test = pd.read_csv(testFile, sep='\t')
+    print df_train.dtypes
     
     df_output = pd.DataFrame(df_test[['PhraseId']])
     

@@ -49,7 +49,7 @@ d = df.T.to_dict().values()
 #print x
 
 
-text = ['Hop on the pop', 'Hop off', 'Hop Hop hop']
+text = ['not Hop on the pop', 'Hop off', 'Hop Hop hop']
 vectorizer = CountVectorizer(ngram_range=(1,8), stop_words='english')
 
 vectorizer.fit(text)
