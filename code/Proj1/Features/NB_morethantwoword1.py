@@ -14,7 +14,7 @@ def cv_optimize(X_train, Y_train, clf):
     alpha_range = [1]
     param_grid = dict(alpha=alpha_range)
 
-    gs = GridSearchCV(clf, param_grid = param_grid, cv = 100, n_jobs = 4, verbose = 3)
+    gs = GridSearchCV(clf, param_grid = param_grid, cv = 100, n_jobs = 8, verbose = 3)
     gs.fit(X_train, Y_train)
     print "gs.best_params_ = {0}, gs.best_score_ = {1}".format(gs.best_params_, gs.best_score_)
     return gs.best_estimator_, gs.best_params_, gs.best_score_
@@ -27,8 +27,7 @@ def fit_clf(X_train, Y_train):
     return clf
     
 def make_train_test(df_train, df_test):
-    vectorizer = CountVectorizer(ngram_range=(1, 7))
-    print df_train.dtypes
+    vectorizer = CountVectorizer(ngram_range=(1, 1))
     X_train = vectorizer.fit_transform(df_train['Phrase'].values)
     Y_train = df_train['Sentiment'].values
     X_test = vectorizer.transform(df_test['Phrase'].values)

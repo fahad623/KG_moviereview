@@ -1,8 +1,8 @@
 import csv
 
 
-location_input_file = "../../../classifier/VW/rotten.preds.txt"
-location_output_file = "../../../classifier/VW/kaggle.submission.csv"
+location_input_file = "../../../data/rotten.preds.txt"
+location_output_file = "../../../data/kaggle.submission.csv"
 
 def to_kaggle(header=""):
     print "\nReading:",location_input_file,"\nWriting:",location_output_file
