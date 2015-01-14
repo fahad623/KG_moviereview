@@ -10,7 +10,8 @@ def write_meta_csv(clf_name, df_output, Y_test, del_folder = False):
 
 def write_test_csv(clf_name, df_output, Y_test, del_folder = False):
 
-    df_output[clf_name] = Y_test
+    #df_output[clf_name] = Y_test
+    df_output['Sentiment'] = Y_test
     write_csv(clf_name, pre_process.clfFolderBase, df_output, pre_process.test_csv_name, del_folder) 
 
 def write_base_csv(clf_name, df_output, del_folder = False):

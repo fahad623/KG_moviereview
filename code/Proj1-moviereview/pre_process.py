@@ -27,32 +27,14 @@ class PreProcessBase(object):
     def clean(self):
         pass
 
-    def stem(init, phrase):
-        content = phrase.split()
-        list_stemmed = []
-        stemmer = SnowballStemmer("english")
-
-        for word in content:
-            if word != '\n':                
-                list_stemmed.append(stemmer.stem(word))
-
-        words = " ".join(list_stemmed)
-        return words
-
     def preprocess_data(self):
-
-        self.X_train = np.array([self.stem(d) for d in self.X_train])
-        self.X_test = np.array([self.stem(d) for d in self.X_test])
-
-        vectorizer = CountVectorizer()
-    
-        self.X_train = vectorizer.fit_transform(df_train['Phrase'].values)
-        self.X_test = vectorizer.transform(df_test['Phrase'].values)
-
+        vectorizer = CountVectorizer(ngram_range=(1, 8)) 
+        self.X_train = vectorizer.fit_transform(self.X_train)
+        self.X_test = vectorizer.transform(self.X_test)
 
     def load(self):
         df_train = pd.read_csv(trainFile, sep='\t')
-        df_test= pd.read_csv(testFile, sep='\t')
+        df_test = pd.read_csv(testFile, sep='\t')
         self.df_output_train['PhraseId'] = pd.DataFrame(df_train.ix[:,0])
         self.df_output_test['PhraseId'] = pd.DataFrame(df_test.ix[:,0])
 
