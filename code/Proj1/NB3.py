@@ -13,6 +13,9 @@ clfFolder = "../../classifier/NB3/"
 def make_train_test(df_train, df_test):
     vectorizer = CountVectorizer(ngram_range=(2, 2))
     
+    temp = df_train['Phrase'].values
+    print temp.shape
+    
     X_train = vectorizer.fit_transform(df_train['Phrase'].values)
     Y_train = df_train['Sentiment'].values
     X_test = vectorizer.transform(df_test['Phrase'].values)
