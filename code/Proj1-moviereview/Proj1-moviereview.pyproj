@@ -27,6 +27,9 @@
     <Compile Include="pre_process.py" />
     <Compile Include="stem_inputs.py" />
     <Compile Include="Test.py" />
+    <Compile Include="_base_BaggingClassifier.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="_base_MultinomialNB.py">
       <SubType>Code</SubType>
     </Compile>
