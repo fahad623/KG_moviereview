@@ -44,7 +44,7 @@ class XGBoostClassifier(BaseEstimator, ClassifierMixin):
         return self.bst.predict( xg_test )
 
 def make_best_classifier():
-    return XGBoostClassifier(num_round = 32, subsample = 0.73, eta = 0.17, max_depth = 2), predict_method
+    return XGBoostClassifier(num_round = 1000, subsample = 0.7, eta = 0.2, max_depth = 100), predict_method
 
 def train_base_clf(pp):    
     clf = make_best_classifier()[0]
