@@ -54,10 +54,10 @@ def train_base_clf(pp):
     subsample_range = np.arange(0.50, 1.0, 0.1)
 
     param_grid = dict(eta = eta_range, max_depth = max_depth_range, num_round = num_round_range, subsample = subsample_range)
-    clf, bp, bs = cross_val.fit_clf(clf, pp.X_train, pp.Y_train, param_grid)
+    #clf, bp, bs = cross_val.fit_clf(clf, pp.X_train, pp.Y_train, param_grid)
     output_csv.write_test_csv(clf.__class__.__name__, pp.df_output_test, clf.predict(pp.X_test))
-    output_csv.write_gs_params_base(clf.__class__.__name__, bp, bs, 
-                                    clf.score(pp_base.X_train, pp_base.Y_train))
+    #output_csv.write_gs_params_base(clf.__class__.__name__, bp, bs, 
+    #                                clf.score(pp_base.X_train, pp_base.Y_train))
     return clf, predict_method
 
 

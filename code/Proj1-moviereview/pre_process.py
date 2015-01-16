@@ -6,6 +6,11 @@ from nltk.stem.snowball import SnowballStemmer
 
 trainFile = "../../data/train.tsv"
 testFile = "../../data/test.tsv"
+trainFile_vw = "../../data/train.vw" 
+testFile_vw = "../../data/test.vw"
+predsFile_vw = "../../data/preds.vw.txt"
+
+
 clfFolderTop = "../../classifier/"
 clfFolderBase = "../../classifier/Base/"
 clfFolderMeta = "../../classifier/Meta/"
