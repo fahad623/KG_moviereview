@@ -8,6 +8,8 @@ trainFile = "../../data/train.tsv"
 testFile = "../../data/test.tsv"
 trainFile_vw = "../../data/train.vw" 
 testFile_vw = "../../data/test.vw"
+#trainFile_vw = "../github/KG_moviereview/data/train.vw" 
+#testFile_vw = "../github/KG_moviereview/data/test.vw"
 predsFile_vw = "../../data/preds.vw.txt"
 
 

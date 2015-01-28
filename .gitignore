@@ -1,5 +1,7 @@
 data/
 classifier/
+code/tmpfiles/
+code/Proj1-moviereview/tmpfiles/
 *.csv
 *.csv.gz
 *.suo

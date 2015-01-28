@@ -13,6 +13,5 @@ def to_kaggle(header=""):
         for row in reader:
             outfile.write( row[1] + "," + str(int(row[0][0])-1) + "\n" )
 
-to_kaggle("PhraseId,Sentiment")
-
-# Kaggle score - 0.62492
+if __name__ == '__main__':
+    to_kaggle("PhraseId,Sentiment")

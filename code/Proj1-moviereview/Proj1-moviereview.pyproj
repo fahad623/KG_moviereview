@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7b8acdc2-8b90-49a0-a86e-63221d3190a8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>stem_inputs.py</StartupFile>
+    <StartupFile>_base_VowpalWabbitClassifier.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>

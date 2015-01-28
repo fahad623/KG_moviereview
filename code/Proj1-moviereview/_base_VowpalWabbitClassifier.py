@@ -7,7 +7,7 @@ import pre_process
 predict_method = ''
 
 def make_best_classifier():
-    return VowpalWabbitClassifier(), predict_method
+    return VowpalWabbitClassifier(vw = 'vw'), predict_method
 
 def train_base_clf():    
     clf = make_best_classifier()[0]
