@@ -1,5 +1,3 @@
-import sys
-sys.path.append('../../../../py_ml_utils/')
 from VowpalWabbit import VowpalWabbitClassifier
 
 import pre_process

@@ -30,6 +30,7 @@
     <Compile Include="utils_vowpal.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="VowpalWabbit.py" />
     <Compile Include="_base_BaggingClassifier.py">
       <SubType>Code</SubType>
     </Compile>
