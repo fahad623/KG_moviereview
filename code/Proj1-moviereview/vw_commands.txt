@@ -1,1 +1,4 @@
 vw train.vw -c -k --passes 300 --ngram 7 -b 24 --ect 5 -f vw.model
+
+Train-
+~/code/vowpal_wabbit/utl/vw-hypersearch -L 1e-10 1e-4 vw train.vw -c --passes 300 --ngram 7 -b 24 --ect 5 -f l1_model.vw --l1 %
