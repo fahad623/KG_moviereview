@@ -375,7 +375,7 @@ class VW:
   def read_predictions_(self):
     for x in open(self.prediction_file):
       yield self.parse_prediction(x)
-    os.remove(self.prediction_file)
+    #os.remove(self.prediction_file)
 
   def make_subprocess(self, command, file):    
     stdout = open('nul', 'w')
