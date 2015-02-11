@@ -40,7 +40,7 @@ def to_kaggle(location_input_file, location_output_file, header=""):
             outfile.write( row[1] + "," + str(int(row[0][0])-1) + "\n" )
 
 if __name__ == '__main__':
-    to_vw(pre_process.trainFile, pre_process.trainFile_vw)
-    to_vw(pre_process.testFile, pre_process.testFile_vw, test=True)
+#    to_vw(pre_process.trainFile, pre_process.trainFile_vw)
+#    to_vw(pre_process.testFile, pre_process.testFile_vw, test=True)
 
-    #to_kaggle(pre_process.predsFile_vw,  submission_output_file, "PhraseId,Sentiment")
+    to_kaggle(pre_process.predsFile_vw,  submission_output_file, "PhraseId,Sentiment")

@@ -42,14 +42,14 @@ if __name__ == '__main__':
     param['objective'] = 'multi:softmax'
     # scale weight of positive examples
     param['eta'] = 0.2
-    param['max_depth'] = 1000
+    param['max_depth'] = 100
     param['subsample'] = 0.7
     param['silent'] = 1
     param['nthread'] = 7
     param['num_class'] = 5
     
     watchlist = [ (xg_train,'train'), (xg_test, 'test') ]
-    num_round = 1500
+    num_round = 1000
     
     bst = xgb.train( param, xg_train, num_round)    
     ypred = bst.predict( xg_test )

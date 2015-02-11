@@ -1,4 +1,15 @@
-vw train.vw -c -k --passes 300 --ngram 7 -b 24 --ect 5 -f vw.model
+vw train.vw -c --passes 300 --ngram 7 -b 24 --ect 5 -f vw.model
+vw train.vw -c --passes 11 --ngram 7 -b 24 --ect 5 -f vw.model --holdout_off
+vw test.vw -t -i vw.model -p preds.vw.txt
+score - 0.61674
 
-Train-
-~/code/vowpal_wabbit/utl/vw-hypersearch -L 1e-10 1e-4 vw train.vw -c --passes 300 --ngram 7 -b 24 --ect 5 -f l1_model.vw --l1 %
+
+
+~/code/vowpal_wabbit/utl/vw-hypersearch -L 1e-8 1e-7 vw train.vw -c --passes 300 --ngram 7 -b 24 --ect 5 -f l1_model.vw --l1 %
+6.75632e-08	0.334999
+~/code/vowpal_wabbit/utl/vw-hypersearch -L 1e-12 1e-6 vw train.vw -c --passes 300 --ngram 7 -b 24 --ect 5 --l1 6.75632e-08 -f l2_model.vw --l2 %
+no change
+vw train.vw -c --passes 300 --ngram 7 -b 24 --ect 5 -f vw.model --l1 6.75632e-08
+vw train.vw -c --passes 25 --ngram 7 -b 24 --ect 5 -f vw.model --holdout_off --l1 6.75632e-08
+vw test.vw -t -i vw.model -p preds.vw.txt
+score - 0.61614
