@@ -35,7 +35,7 @@ class PreProcessBase(object):
         pass
 
     def preprocess_data(self):
-        vectorizer = CountVectorizer(ngram_range=(1, 7)) 
+        vectorizer = CountVectorizer() 
         self.X_train = vectorizer.fit_transform(self.X_train)
         self.X_test = vectorizer.transform(self.X_test)
 

@@ -1,5 +1,7 @@
 from nltk.stem.snowball import SnowballStemmer
 import numpy as np
+import pandas as pd
+from scipy import stats
 
 #def parseOutText(f):
 #    content = f.split()
@@ -21,6 +23,15 @@ import numpy as np
 #    print newdata
 
 
-words = " ".join([])
-test =""
-print words
+#words = " ".join([])
+#test =""
+#print words
+
+df = pd.DataFrame({'a': [1.0, 4.0, 3.0], 'b':[1.0, 6.7, 9.8]})
+df['mode'] = df.ix[:, 0:2].mode(axis = 1)
+df.ix[df['mode'].isnull(), 'mode'] = df.ix[df['mode'].isnull(), 'a']
+df['mode'] = df['mode'].astype(np.int)
+print df
+
+
+

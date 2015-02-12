@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>7b8acdc2-8b90-49a0-a86e-63221d3190a8</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>_base_VowpalWabbitClassifier.py</StartupFile>
+    <StartupFile>averaging.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="averaging.py" />
     <Compile Include="cross_val.py" />
     <Compile Include="output_csv.py" />
     <Compile Include="pre_process.py" />
