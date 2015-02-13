@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import pre_process
 
-clf_names_avg = ['vw', 'BaggingClassifier', 'MultinomialNB']
+clf_names_avg = ['XGBoostClassifier', 'vw', 'MultinomialNB']
 
 def avg_to_output():
     newColNames =[]
